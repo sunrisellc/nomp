@@ -231,10 +231,9 @@
             <div class="miningOptionNum">1.</div>
             <div class="miningOptionInstructions">
                 <div>Download A Miner</div>
-                <div>
+                <div class="miningOptionInstructions">
                     <a href="/downloads/cgminer.rar">CGMiner 3 AMD GPU Scrypt Miner</a><br>
-                    <a href="/downloads/bfgminer.rar">BFGMiner 5 nVidia GPU Scrypt Miner</a>
-
+                    <a href="/downloads/bfgminer.rar">BFGMiner 5 nVidia GPU Scrypt Miner</a><br>
                 </div>
             </div>
         </a>
@@ -282,7 +281,7 @@
         }
 
         if (info.coin)
-            $('#coinInfoUsername').text('Your ' + info.coin.name + ' wallet address');
+            $('#coinInfoUsername').text('your ' + info.coin.name + ' wallet address');
         else
             $('#coinInfoUsername').text('your public key');
         $('.coinInfoData').remove();
@@ -314,4 +313,9 @@
         return false;
     });
 
+    $('#nompAppDownload').click(function(event){
+        event.preventDefault();
+        alert('NOMP App development still in progress...');
+        return false;
+    });
 </script>
