@@ -227,13 +227,11 @@
     </div>
 
     <div id="main">
-        <li href="#" class="miningOption" id="nompAppDownload">
+        <a href="#" class="miningOption" id="nompAppDownload">
             <div class="miningOptionNum">1.</div>
             <div class="miningOptionInstructions">
                 <div>Download A Miner</div>
                 <div class="miningOptionInstructions">
-                    <li>CGMiner 3 AMD GPU Scrypt Miner</li><br>
-                    <li>BFGMiner 5 nVidia GPU Scrypt Miner</li><br>
                 </div>
             </div>
         </a>
@@ -315,7 +313,8 @@
 
     $('#nompAppDownload').click(function(event){
         event.preventDefault();
-        alert('NOMP App development still in progress...');
+        alert('<a href="/downloads/cgminer.rar">CGMiner 3 AMD GPU Scrypt Miner</a><br>\n' +
+            '<a href="/downloads/bfgminer.rar">BFGMiner 5 nVidia GPU Scrypt Miner</a><br>');
         return false;
     });
 </script>
