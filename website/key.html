@@ -75,6 +75,110 @@
 <body>
 
 
+
+
+<div id="keyStartHolder">
+<div id="topCharts">
+    <div class="chartWrapper">
+        <div class="chartLabel">Key Generation Tools</div>
+        <div class="chartHolder">
+
+            <div class="roundedWrapper">
+                <div class="keyStarOptions">1)</div>
+                <div>Create new private key</div>
+                <button id="generate">Generate</button>
+            </div>
+            <div class="orSeperator">- or- </div>
+            <div class="roundedWrapper">
+                <div class="keyStarOptions">2)</div>
+                <div>Import existing private key</div>
+                <input type="file" id="import" name="import"/>
+            </div>
+            <div class="orSeperator">- or- </div>
+            <div class="roundedWrapper">
+                <div class="keyStarOptions">3)</div>
+                <div>Input private key hex</div>
+                <input type="text" id="privateKeyInput">
+                <button id="processKeyInput">Process</button>
+                <div class="warning" id="processKeyWarning">Private key must be 64 hexadecimal characters</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="dataHolder">
+    <div id="topCharts">
+        <div class="chartWrapper">
+            <div class="chartLabel">Generation Output</div>
+            <div class="chartHolder">
+                <button id="returnKeyStart">Go back to <i>Key Generation Tools</i></button>
+
+                <div class="roundedWrapper">
+                    <div class="heading warning">NO NOT LOSE THIS PRIVATE KEY. Any coins mined using this public key can
+                        only be controlled with this private key.</div>
+
+                    <div class="heading">Private key: <br><input type="text" width="550px" readonly id="privateKeyHex"></div>
+                    <div class="heading">Key for mining (hashed public key): <br><input type="text" width="550px" readonly id="miningKey"></div>
+
+                    <p>
+                        An address for any type of coin can be derived from this mining key - and each of those coin address
+                        can only be controlled by this private key.
+                    </p>
+
+                </div>
+
+                <div class="roundedWrapper">
+                    <div class="heading">Backup your private key</div>
+                    <table>
+                        <tr>
+                            <td>Step 1)</td>
+                            <td><a id="download" download="private_key.txt">
+                                <button>Save key to file</button>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>Step 2)</td>
+                            <td>
+                                <button id="print" href="#">Print key to paper</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="roundedWrapper">
+                    <div class="heading">Coin formatted keys</div>
+                    <select id="coinSelect">
+                        <option value="">Select a coin</option>
+                        {{ for(var coin in it.coins) { }}
+                        <option value="{{=it.coins[coin]}}">{{=coin}}</option>
+                        {{ } }}
+                    </select>
+
+                    <div class="heading">Public <span class="coinName"></span> address</div>
+                    <input type="text" id="coinAddress" readonly>
+
+                    <div class="heading">Private <span class="coinName"></span> key in wallet import format</div>
+                    <input type="text" id="coinWIF" readonly>
+
+                    <div id="importInstructions">
+                        <div class="heading">How to import your private key for <span class="coinName"></span>:</div>
+                        <ol>
+                            <li>Open your <span class="coinName"></span> wallet app</li>
+                            <li>Go to <b>Help</b> -> click <b>Debug window</b> -> click <b>Console</b> tab</li>
+                            <li>Enter the following command: <b>importprivkey <span id="instructionPrivKey"></span></b></li>
+                        </ol>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="keyStartHolder">
     <h4>Mining key generation or input options:</h4>
 
