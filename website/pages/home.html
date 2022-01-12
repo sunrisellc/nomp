@@ -3,6 +3,7 @@
         background-color: #000000;
         color: white;
         margin: 18px;
+	text-align: center;
     }
     #logoImg{
         height: 285px;
@@ -77,15 +78,12 @@
 </style>
 
 
-<div class="pure-g-r" id="boxWelcome">
-    <span class="col-md-12" style="text-align: center">
-        <img id="logoImg" src="https://raw.githubusercontent.com/sunrisellc/bandito/master/src/qt/res/icons/bandito_splash.png">
-        <div id="welcomeText">Ƀandito Mining Pool</div>
-    </span>
+<div class="row" id="boxWelcome">
+	<img style="max-height: 420px" src="http://www.banditocoin.com/wp-content/uploads/2022/01/bandito_pool.png">
 </div>
 
-<div class="pure-g-r" id="boxesLower">
 
+<div class="pure-g-r" id="boxesLower">
     <div class="pure-u-1-2">
         <div class="boxStats" id="boxStatsLeft">
             <div class="boxLowerHeader">Global Stats</div>
@@ -115,8 +113,8 @@
             </div>
         </div>
     </div>
-
 </div>
+
 
 <script>
     $(function() {
