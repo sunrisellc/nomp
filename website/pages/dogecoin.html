@@ -208,7 +208,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="index.html">
+            <a class="nav-link collapsed" href="/">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -311,11 +311,11 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Blank Page</h1>
+        <h1>Dogecoin</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item">Dashboard</li>
+                <li class="breadcrumb-item">Dogecoin</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -325,34 +325,58 @@
 
         <!-- Reports -->
         <div class="row">
-            <div class="col-8">
+            <div class="col-6">
                 <div class="card">
 
                     <div class="card-body">
                         <h5 class="card-title">Cooking Configuration</h5>
                         <ul>
-                            <li>Username: Your Bandito Wallet Address</li>
+                            <li>Username: Your Dogecoin Wallet Address</li>
                             <li>Password: x</li>
                             <li>Algorithm: Scrypt</li>
-                            <li>URL (difficulty 8): stratum+tcp://mine.banditocoin.com:3001</li>
-                            <li>URL (difficulty 32): stratum+tcp://mine.banditocoin.com:3002</li>
-                            <li>URL (difficulty 256): stratum+tcp://mine.banditocoin.com:3003</li>
+                            <li>URL (diff 8): stratum+tcp://mine.banditocoin.com:3011</li>
+                            <li>URL (diff 32): stratum+tcp://mine.banditocoin.com:3022</li>
+                            <li>URL (diff 256): stratum+tcp://mine.banditocoin.com:3033</li>
                         </ul>
                     </div>
 
                 </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-6">
                 <div class="card">
-
                     <div class="card-body">
-                        <h5 class="card-title">Cooking Stats</h5>
+                        <h5 class="card-title">Pie Chart</h5>
 
-
+                        <!-- Pie Chart -->
+                        <canvas id="pieChart" style="max-height: 400px;"></canvas>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#pieChart'), {
+                                    type: 'pie',
+                                    data: {
+                                        labels: [
+                                            'Red',
+                                            'Blue',
+                                            'Yellow'
+                                        ],
+                                        datasets: [{
+                                            label: 'My First Dataset',
+                                            data: [300, 50, 100],
+                                            backgroundColor: [
+                                                'rgb(255, 99, 132)',
+                                                'rgb(54, 162, 235)',
+                                                'rgb(255, 205, 86)'
+                                            ],
+                                            hoverOffset: 4
+                                        }]
+                                    }
+                                });
+                            });
+                        </script>
+                        <!-- End Pie CHart -->
 
                     </div>
-
                 </div>
             </div>
 
