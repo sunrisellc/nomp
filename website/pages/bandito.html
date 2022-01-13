@@ -352,13 +352,13 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Pie Chart</h5>
-
+          {{ for(var algo in it.stats.algos) { }}
 <table>
           <td>{{=it.stats.pools[pool].blocks.pending}}</td>
           <td>{{=it.stats.pools[pool].blocks.confirmed}}</td>
           <td>{{=it.stats.pools[pool].blocks.orphaned}}</td>
 </table>
-
+          {{ } }}
           <!-- Pie Chart -->
           <canvas id="pieChart" style="max-height: 400px;"></canvas>
           <script>
