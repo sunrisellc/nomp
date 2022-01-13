@@ -348,6 +348,9 @@
 
       </div>
 
+      <td>{{=it.stats.pools[pool].blocks.pending}}</td>
+      <td>{{=it.stats.pools[pool].blocks.confirmed}}</td>
+      <td>{{=it.stats.pools[pool].blocks.orphaned}}</td>
 
     <div class="col-6">
       <div class="card">
@@ -362,17 +365,17 @@
                 type: 'pie',
                 data: {
                   labels: [
-                    'Red',
-                    'Blue',
-                    'Yellow'
+                    'Pending',
+                    'Confirmed',
+                    'Orphaned'
                   ],
                   datasets: [{
-                    label: 'My First Dataset',
-                    data: [300, 50, 100],
+                    label: 'Bandito Pool',
+                    data: [{{=it.stats.pools[pool].blocks.pending}}, {{=it.stats.pools[pool].blocks.confirmed}}, {{=it.stats.pools[pool].blocks.orphaned}}],
                     backgroundColor: [
-                      'rgb(255, 99, 132)',
-                      'rgb(54, 162, 235)',
-                      'rgb(255, 205, 86)'
+                      'rgb(233,182,21)',
+                      'rgb(12,196,0)',
+                      'rgb(196,1,1)'
                     ],
                     hoverOffset: 4
                   }]
