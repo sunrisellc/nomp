@@ -1,6 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html lang="en">
 <head>
     <meta charset="utf-8">
 
@@ -8,88 +7,51 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.5/d3.min.js"></script>
-    <script src="/static/nvd3.js"></script>
-    <link rel="stylesheet" href="/static/nvd3.css">
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="static/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-    <script src="/static/main.js"></script>
-    <link rel="stylesheet" href="/static/style.css">
+<!-- Vendor JS Files -->
+  <script src="static/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/chart.js/chart.min.js"></script>
+  <script src="static/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="static/assets/vendor/quill/quill.min.js"></script>
+  <script src="static/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="static/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
 
-    <title>NOMP</title>
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+    <title>Bandito Pool</title>
 
 </head>
 
+
 <body>
 
-<header>
-    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal">
-
-        <a class="pure-menu-heading hot-swapper" href="/"><i class="fa fa-home"></i>&nbsp;NOMP</a>
-
-        <ul>
-            <li class="{{? it.selected === 'getting_started' }}pure-menu-selected{{?}}">
-                <a class="hot-swapper" href="/getting_started">
-                    <i class="fa fa-rocket"></i>&nbsp;
-                    Getting Started
-                </a>
-            </li>
-            <li class="{{? it.selected === 'stats' }}pure-menu-selected{{?}}">
-                <a class="hot-swapper" href="/stats">
-                    <i class="fa fa-bar-chart-o"></i>&nbsp;
-                    Graph Stats
-                </a>
-            </li>
-            <li class="{{? it.selected === 'tbs' }}pure-menu-selected{{?}}">
-                <a class="hot-swapper" href="/tbs">
-                    <i class="fa fa-table"></i>&nbsp;
-                    Tab Stats
-                </a>
-            </li>
-            <li class="{{? it.selected === 'workers' }}pure-menu-selected{{?}}">
-                <a class="hot-swapper" href="/workers">
-                    <i class="fa fa-cogs"></i>&nbsp;
-                    Workers Stats
-                </a>
-            </li>
-            <li class="{{? it.selected === 'api' }}pure-menu-selected{{?}}">
-                <a class="hot-swapper" href="/api">
-                    <i class="fa fa-code"></i>&nbsp;
-                    API
-                </a>
-            </li>
-        </ul>
-    </div>
-</header>
 
 <main>
     {{=it.page}}
 </main>
 
-
-<footer>
-
-    <div>
-        This site is powered by the open source&nbsp;<a target="_blank" href="https://github.com/zone117x/node-open-mining-portal/">NOMP</a>&nbsp;
-        project created by Matthew Little and licensed under the&nbsp;<a href="https://www.gnu.org/licenses/gpl-2.0.html">GPL</a>
-    </div>
-    <div>
-        <i class="fa fa-heart"></i>&nbsp; Support this project by donating&nbsp;<i class="fa fa-btc"></i>&nbsp;BTC: 1KRotMnQpxu3sePQnsVLRy3EraRFYfJQFR
-    </div>
-    <div id="communityFooter">
-        Community&nbsp;<i class="fa fa-comment"></i>&nbsp;: &nbsp;<a target="_blank" href="https://kiwiirc.com/client/irc.freenode.net/nomp">#nomp IRC</a>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <a target="_blank" href="https://reddit.com/r/nomp">/r/nomp</a>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <iframe src="https://ghbtns.com/github-btn.html?user=zone117x&repo=node-open-mining-portal&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20"></iframe>
-    </div>
-
-</footer>
-
-</body>
+<body>
 </html>
