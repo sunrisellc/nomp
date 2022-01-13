@@ -55,6 +55,10 @@
 
       </div>
     </div>
+    <!-- End Reports -->
+
+  </div>
+
 
   <div class="col-lg-4">
     <div class="col-12">
@@ -78,15 +82,15 @@
                   datasets: [{
                     label: 'Bandito Pool',
                     data: [{{=it.stats.pools['bandito'].blocks.pending}}, {{=it.stats.pools['bandito'].blocks.confirmed}}, {{=it.stats.pools['bandito'].blocks.orphaned}}],
-                    backgroundColor: [
-                      'rgb(233,182,21)',
-                      'rgb(12,196,0)',
-                      'rgb(196,1,1)'
-                    ],
-                    hoverOffset: 4
-                  }]
-                }
-              });
+              backgroundColor: [
+                'rgb(233,182,21)',
+                'rgb(12,196,0)',
+                'rgb(196,1,1)'
+              ],
+                      hoverOffset: 4
+            }]
+            }
+            });
             });
           </script>
           <!-- End Pie CHart -->
@@ -94,9 +98,6 @@
         </div>
       </div>
     </div>
-    </div>
-    <!-- End Reports -->
-
   </div>
 
 
