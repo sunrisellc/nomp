@@ -354,9 +354,9 @@
           <h5 class="card-title">Pie Chart</h5>
           {{ for(var algo in it.stats.algos) { }}
 <table>
-          <td>{{=it.stats.pools[pool].blocks.pending}}</td>
-          <td>{{=it.stats.pools[pool].blocks.confirmed}}</td>
-          <td>{{=it.stats.pools[pool].blocks.orphaned}}</td>
+          <td>{{=it.stats.pools['bandito'].blocks.pending}}</td>
+          <td>{{=it.stats.pools['bandito'].blocks.confirmed}}</td>
+          <td>{{=it.stats.pools['bandito'].blocks.orphaned}}</td>
 </table>
           {{ } }}
           <!-- Pie Chart -->
