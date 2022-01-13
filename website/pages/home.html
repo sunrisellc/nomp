@@ -378,59 +378,6 @@
           </div>
           <!-- End Reports -->
 
-            <!-- Recent Sales -->
-            <div class="col-12">
-              <div class="card recent-sales">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-                {{ for(var pool in it.stats.pools) { }}
-                <div class="card-body">
-                  <div class="card-title">Bandito Workers</div>
-                  <table class="table table-borderless datatable" style="font-size: 10px">
-                    <thead>
-                      <tr>
-                        <th scope="col">Address</th>
-                        <th scope="col">Valid</th>
-                        <th scope="col">Invalid</th>
-                        <th scope="col">Efficiency</th>
-                        <th scope="col">Hashrate</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-
-                    {{ for(var worker in it.stats.pools[pool].workers) { }}
-                    {{var workerstat = it.stats.pools[pool].workers[worker];}}
-                    <tr>
-                      <td>{{=worker}}</td>
-                      <td>{{=Math.floor(workerstat.shares)}}</td>
-                      <td>{{=Math.floor(workerstat.invalidshares)}}</td>
-                      <td>{{? workerstat.shares > 0}} {{=Math.floor(10000 * workerstat.shares / (workerstat.shares + workerstat.invalidshares)) / 100}}% {{??}} 0% {{?}}</td>
-                      <td>{{=workerstat.hashrateString}}</td>
-                    </tr>
-                    {{ } }}
-                    </tbody>
-
-
-
-                  </table>
-
-                </div>
-                {{ } }}
-              </div>
-            </div><!-- End Recent Sales -->
-
-
           <!-- Algo Cards -->
           <div class="row">
             {{ for(var algo in it.stats.algos) { }}
