@@ -1,38 +1,3 @@
 <main>
     {{=it.page}}
 </main>
-<<<<<<< HEAD
-
-
-<!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
-  <div class="copyright">
-    &copy; Copyright <strong><span>Bandito</span></strong>. All Rights Reserved
-  </div>
-</footer><!-- End Footer -->
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-<!-- Pool Scripts -->
-<script>
-  $(function() {
-    statsSource.addEventListener('message', function (e) {
-      var stats = JSON.parse(e.data);
-      for (algo in stats.algos) {
-        $('#statsMiners' + algo).text(stats.algos[algo].workers);
-        $('#statsHashrate' + algo).text(stats.algos[algo].hashrateString);
-      }
-      for (var pool in stats.pools) {
-        $('#statsMiners' + pool).text(stats.pools[pool].workerCount);
-        $('#statsHashrate' + pool).text(stats.pools[pool].hashrateString);
-      }
-    });
-  });
-</script>
-
-</body>
-
-</html>
-=======
->>>>>>> parent of f521e9e (Ugh...)
