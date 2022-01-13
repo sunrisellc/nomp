@@ -293,84 +293,6 @@
         <!-- Left side columns -->
         <div class="col-lg-8">
 
-          <!-- Algo Cards -->
-          <div class="row">
-            {{ for(var algo in it.stats.algos) { }}
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Current</a></li>
-                    <li><a class="dropdown-item" href="#">Average</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title caps">Total {{=algo}}</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart-steps"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><span id="statsHashrate{{=algo}}">{{=it.stats.algos[algo].hashrateString}}</span></h6>
-                      <span class="text-success small pt-1 fw-bold" id="statsMiners{{=algo}}">{{=it.stats.algos[algo].workers}}</span> <span class="text-muted small pt-2 ps-1">Miners</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            {{ } }}
-          </div>
-          <!-- End Algo Cards -->
-
-
-          <!-- Pool/Coin Cards -->
-          <div class="row">
-            {{ for(var pool in it.stats.pools) { }}
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Current</a></li>
-                    <li><a class="dropdown-item" href="#">Average</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title caps">{{=pool}} Pool</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart-steps"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><span id="statsHashrate{{=pool}}">{{=it.stats.pools[pool].hashrateString}}</span></h6>
-                      <span class="text-success small pt-1 fw-bold" id="statsMiners{{=pool}}">{{=it.stats.pools[pool].workerCount}}</span> <span class="text-muted small pt-2 ps-1"> Miners</span>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            {{ } }}
-          </div>
-          <!-- End Pool/Coin Cards -->
-
             <!-- Reports -->
           <div class="row">
             <div class="col-12">
@@ -472,7 +394,7 @@
                 </div>
                 {{ for(var pool in it.stats.pools) { }}
                 <div class="card-body">
-
+                  <div class="card-title">Bandito Workers</div>
                   <table class="table table-borderless datatable" style="font-size: 10px">
                     <thead>
                       <tr>
@@ -505,8 +427,85 @@
                 {{ } }}
               </div>
             </div><!-- End Recent Sales -->
-
           </div>
+
+          <!-- Algo Cards -->
+          <div class="row">
+            {{ for(var algo in it.stats.algos) { }}
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Current</a></li>
+                    <li><a class="dropdown-item" href="#">Average</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title caps">Total {{=algo}}</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-bar-chart-steps"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><span id="statsHashrate{{=algo}}">{{=it.stats.algos[algo].hashrateString}}</span></h6>
+                      <span class="text-success small pt-1 fw-bold" id="statsMiners{{=algo}}">{{=it.stats.algos[algo].workers}}</span> <span class="text-muted small pt-2 ps-1">Miners</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            {{ } }}
+          </div>
+          <!-- End Algo Cards -->
+
+          <!-- Pool/Coin Cards -->
+          <div class="row">
+            {{ for(var pool in it.stats.pools) { }}
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Current</a></li>
+                    <li><a class="dropdown-item" href="#">Average</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title caps">{{=pool}} Pool</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-bar-chart-steps"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><span id="statsHashrate{{=pool}}">{{=it.stats.pools[pool].hashrateString}}</span></h6>
+                      <span class="text-success small pt-1 fw-bold" id="statsMiners{{=pool}}">{{=it.stats.pools[pool].workerCount}}</span> <span class="text-muted small pt-2 ps-1"> Miners</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            {{ } }}
+          </div>
+          <!-- End Pool/Coin Cards -->
+
         </div><!-- End Left side columns -->
 
         <!-- Right side columns -->
