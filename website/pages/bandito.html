@@ -293,171 +293,10 @@
         <!-- Left side columns -->
         <div class="col-lg-8">
 
-          <!-- Algo Cards -->
-          <div class="row">
-            {{ for(var algo in it.stats.algos) { }}
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Current</a></li>
-                    <li><a class="dropdown-item" href="#">Average</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title caps">Total {{=algo}}</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart-steps"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><span id="statsHashrate{{=algo}}">{{=it.stats.algos[algo].hashrateString}}</span></h6>
-                      <span class="text-success small pt-1 fw-bold" id="statsMiners{{=algo}}">{{=it.stats.algos[algo].workers}}</span> <span class="text-muted small pt-2 ps-1">Miners</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            {{ } }}
-          </div>
-          <!-- End Algo Cards -->
-
-
-          <!-- Pool/Coin Cards -->
-          <div class="row">
-            {{ for(var pool in it.stats.pools) { }}
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Current</a></li>
-                    <li><a class="dropdown-item" href="#">Average</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title caps">{{=pool}} Pool</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart-steps"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><span id="statsHashrate{{=pool}}">{{=it.stats.pools[pool].hashrateString}}</span></h6>
-                      <span class="text-success small pt-1 fw-bold" id="statsMiners{{=pool}}">{{=it.stats.pools[pool].workerCount}}</span> <span class="text-muted small pt-2 ps-1"> Miners</span>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            {{ } }}
-          </div>
-          <!-- End Pool/Coin Cards -->
-
-            <!-- Reports -->
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Reports <span>/Today</span></h5>
-
-                  <!-- Line Chart -->
-                  <div id="reportsChart"></div>
-
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      new ApexCharts(document.querySelector("#reportsChart"), {
-                        series: [{
-                          name: 'Sales',
-                          data: [31, 40, 28, 51, 42, 82, 56],
-                        }, {
-                          name: 'Revenue',
-                          data: [11, 32, 45, 32, 34, 52, 41]
-                        }, {
-                          name: 'Customers',
-                          data: [15, 11, 32, 18, 9, 24, 11]
-                        }],
-                        chart: {
-                          height: 350,
-                          type: 'area',
-                          toolbar: {
-                            show: false
-                          },
-                        },
-                        markers: {
-                          size: 4
-                        },
-                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                        fill: {
-                          type: "gradient",
-                          gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.3,
-                            opacityTo: 0.4,
-                            stops: [0, 90, 100]
-                          }
-                        },
-                        dataLabels: {
-                          enabled: false
-                        },
-                        stroke: {
-                          curve: 'smooth',
-                          width: 2
-                        },
-                        xaxis: {
-                          type: 'datetime',
-                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                        },
-                        tooltip: {
-                          x: {
-                            format: 'dd/MM/yy HH:mm'
-                          },
-                        }
-                      }).render();
-                    });
-                  </script>
-                  <!-- End Line Chart -->
-
-                </div>
-
-              </div>
-            </div><!-- End Reports -->
-
-            <!-- Recent Sales -->
+          <!-- Recent Sales -->
             <div class="col-12">
               <div class="card recent-sales">
-
+                <div class="card-title">Bandito Mining Information</div>
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -470,7 +309,7 @@
                     <li><a class="dropdown-item" href="#">This Year</a></li>
                   </ul>
                 </div>
-                {{ for(var pool in it.stats.pools) { }}
+
                 <div class="card-body">
 
                   <table class="table table-borderless datatable" style="font-size: 10px">
@@ -484,9 +323,6 @@
                       </tr>
                     </thead>
                     <tbody>
-
-                    {{ for(var worker in it.stats.pools[pool].workers) { }}
-                    {{var workerstat = it.stats.pools[pool].workers[worker];}}
                     <tr>
                       <td>{{=worker}}</td>
                       <td>{{=Math.floor(workerstat.shares)}}</td>
@@ -494,7 +330,7 @@
                       <td>{{? workerstat.shares > 0}} {{=Math.floor(10000 * workerstat.shares / (workerstat.shares + workerstat.invalidshares)) / 100}}% {{??}} 0% {{?}}</td>
                       <td>{{=workerstat.hashrateString}}</td>
                     </tr>
-                    {{ } }}
+
                     </tbody>
 
 
@@ -502,7 +338,7 @@
                   </table>
 
                 </div>
-                {{ } }}
+
               </div>
             </div><!-- End Recent Sales -->
 
@@ -673,14 +509,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      &copy; Copyright <strong><span>Bandito</span></strong>. All Rights Reserved
     </div>
   </footer><!-- End Footer -->
 
