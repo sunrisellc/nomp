@@ -35,13 +35,8 @@ module.exports = function(logger){
     var pageFiles = {
         'index.html': 'index',
         'home.html': '',
-        'getting_started.html': 'getting_started',
-        'stats.html': 'stats',
-        'tbs.html': 'tbs',
-        'workers.html': 'workers',
         'api.html': 'api',
-        'admin.html': 'admin',
-        'mining_key.html': 'mining_key',
+	'key.html': 'keys',
 	'bandito.html': 'bandito',
 	'dogecoin.html': 'dogecoin'
     };
