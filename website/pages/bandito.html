@@ -312,31 +312,6 @@
 
                 <div class="card-body">
 
-                  <table class="table table-borderless datatable" style="font-size: 10px">
-                    <thead>
-                      <tr>
-                        <th scope="col">Address</th>
-                        <th scope="col">Valid</th>
-                        <th scope="col">Invalid</th>
-                        <th scope="col">Efficiency</th>
-                        <th scope="col">Hashrate</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>{{=worker}}</td>
-                      <td>{{=Math.floor(workerstat.shares)}}</td>
-                      <td>{{=Math.floor(workerstat.invalidshares)}}</td>
-                      <td>{{? workerstat.shares > 0}} {{=Math.floor(10000 * workerstat.shares / (workerstat.shares + workerstat.invalidshares)) / 100}}% {{??}} 0% {{?}}</td>
-                      <td>{{=workerstat.hashrateString}}</td>
-                    </tr>
-
-                    </tbody>
-
-
-
-                  </table>
-
                 </div>
 
               </div>
