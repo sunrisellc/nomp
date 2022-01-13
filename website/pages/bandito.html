@@ -39,7 +39,7 @@
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title caps">Active {{=it.stats.pools[pool].name} Workers</h5>
+          <h5 class="card-title caps">Active {{=it.stats.pools['bandito'].name}} Workers</h5>
           {{ for(var pool in it.stats.pools) { }}
               <table class="pure-table">
                 <thead>
@@ -51,8 +51,8 @@
                   <th>Hashrate</th>
                 </tr>
                 </thead>
-                {{ for(var worker in it.stats.pools[pool].workers) { }}
-                {{var workerstat = it.stats.pools[pool].workers[worker];}}
+                {{ for(var worker in it.stats.pools['bandito'].workers) { }}
+                {{var workerstat = it.stats.pools['bandito'].workers[worker];}}
                 <tr class="pure-table-odd">
                   <td>{{=worker}}</td>
                   <td>{{=Math.floor(workerstat.shares)}}</td>
