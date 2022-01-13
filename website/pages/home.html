@@ -494,7 +494,7 @@
                     <li><a class="dropdown-item" href="#">This Year</a></li>
                   </ul>
                 </div>
-
+                {{ for(var pool in it.stats.pools) { }}
                 <div class="card-body">
                   <h5 class="card-title caps">{{=it.stats.pools[pool].name} Workers</h5>
 
@@ -508,12 +508,11 @@
                         <th scope="col">Hashrate</th>
                       </tr>
                     </thead>
-                    {{ for(var pool in it.stats.pools) { }}
                     <tbody>
 
                     {{ for(var worker in it.stats.pools[pool].workers) { }}
                     {{var workerstat = it.stats.pools[pool].workers[worker];}}
-                    <tr class="pure-table-odd">
+                    <tr>
                       <td>{{=worker}}</td>
                       <td>{{=Math.floor(workerstat.shares)}}</td>
                       <td>{{=Math.floor(workerstat.invalidshares)}}</td>
@@ -536,7 +535,7 @@
                   </table>
 
                 </div>
-
+                {{ } }}
               </div>
             </div><!-- End Recent Sales -->
 
