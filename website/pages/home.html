@@ -261,7 +261,7 @@
 <script>
   {{ for(var algo in it.stats.algos) { }}
 
-  str = JSON.stringify(poolBlockData, null, 4); // (Optional) beautiful indented output.
+  str = JSON.stringify(it.stats.global.hashrate, null, 4); // (Optional) beautiful indented output.
   console.log(str); // Logs output to dev tools console.
   alert(str); // Displays output using window.alert()
             {{ } }}
