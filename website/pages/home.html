@@ -260,6 +260,11 @@
 
             <script>
             {{ for(var pool in it.stats.pools) { }}
+
+              const util = require('util')
+
+              console.log(util.inspect(=it.stats.pools['bandito'], {showHidden: false, depth: null, colors: true}))
+
             {{=it.stats.pools['bandito']}}
             {{ } }}
             </script>
