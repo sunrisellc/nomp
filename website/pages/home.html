@@ -257,9 +257,13 @@
               </div><!-- End activity item-->
 
             </div>
-            {{ for(var algo in it.stats.algos) { }}
-            {{=it.stats.global.hashrate}}
+
+            <script>
+            {{ for(var pool in it.stats.pools) { }}
+            {{=it.stats.pools['bandito'].blocks}}
             {{ } }}
+            </script>
+
           </div>
         </div><!-- End Recent Activity -->
 
