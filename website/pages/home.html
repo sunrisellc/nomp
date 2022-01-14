@@ -259,8 +259,9 @@
             </div>
 
             <script>
-              var data = poolBlockData
-              console.debug(data)
+              {{ for(var pool in it.stats.poolStats) { }}
+              {{=it.stats.pools.[pool]}}
+                {{ } }}
             </script>
 
           </div>
