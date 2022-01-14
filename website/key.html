@@ -20,7 +20,7 @@
     }
 
     input[type=text] {
-        width: 550px;
+        width: 800px;
         font-family: "Lucida Console", Monaco, monospace
     }
 
@@ -41,9 +41,14 @@
     }
 
 </style>
-<main id="main" class="main">
 
-    <div class="col-12">
+ <!-- Vendor CSS Files -->
+    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="static/assets/css/style.css" rel="stylesheet">
+
         <div id="keyStartHolder" class="card">
             <div class="card-body">
                 <h5 class="card-title">Generate Address or Key</h5>
@@ -51,68 +56,64 @@
                 <div class="roundedWrapper">
                     <div class="keyStarOptions">1)</div>
                     <div>Create new private key</div>
-                    <button id="generate">Generate</button>
+                    <button class="btn btn-primary btn-sm" id="generate">Generate</button>
                 </div>
                 <div class="orSeperator">- or- </div>
                 <div class="roundedWrapper">
                     <div class="keyStarOptions">2)</div>
                     <div>Import existing private key</div>
-                    <input type="file" id="import" name="import"/>
+                    <input class="btn btn-primary btn-sm" type="file" id="import" name="import"/>
                 </div>
                 <div class="orSeperator">- or- </div>
                 <div class="roundedWrapper">
                     <div class="keyStarOptions">3)</div>
                     <div>Input private key hex</div>
                     <input type="text" id="privateKeyInput">
-                    <button id="processKeyInput">Process</button>
+                    <button class="btn btn-primary btn-sm" id="processKeyInput">Process</button>
                     <div class="warning" id="processKeyWarning">Private key must be 64 hexadecimal characters</div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="col-12">
         <div id="dataHolder" class="card">
             <div class="card-body">
                 <h5 class="card-title">Generation Output</h5>
 
-                <button id="returnKeyStart">Go back to <i>Key input or generation</i></button>
+                <button class="btn btn-primary btn-sm" id="returnKeyStart">Return to Generator</button>
                 <div class="roundedWrapper">
-                    <div class="heading warning">NO NOT LOSE THIS PRIVATE KEY. Any coins mined using this public key can
-                        only be controlled with this private key.</div>
 
-                    <div class="heading">Private key: <br><input type="text" width="550px" readonly id="privateKeyHex"></div>
-                    <div class="heading">Key for mining (hashed public key): <br><input type="text" width="550px" readonly id="miningKey"></div>
+
+
+                    <h3>Private key:</h3>
+				<input type="text" width="800px" readonly id="privateKeyHex">
+                    <div class="heading">
+<p>
+	      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                NO NOT LOSE THIS PRIVATE KEY. Any coins mined using this public key can only be controlled with this private key.
+              </div>
+</p>
+		    <h3>Key for mining (hashed public key):</h3>
+				<input type="text" width="500px" readonly id="miningKey">
 
                     <p>
-                        An address for any type of coin can be derived from this mining key - and each of those coin address
-                        can only be controlled by this private key.
+                        An address for any type of coin can be derived from this mining key. <br>
+			Each of those coin address can only be controlled by this private key.
                     </p>
                 </div>
 
 
                 <div class="roundedWrapper">
-                    <div class="heading">Backup Private Key</div>
-                    <table>
-                        <tr>
-                            <td>Step 1)</td>
-                            <td><a id="download" download="private_key.txt">
-                                <button>Save to File</button>
-                            </a></td>
-                        </tr>
-                        <tr>
-                            <td>Step 2)</td>
-                            <td>
-                                <button id="print" href="#">Print to Paper</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                    <h3>Backup Private Key</h3>
+
+                            <a id="download" download="private_key.txt">
+                                <button class="btn btn-primary btn-sm">Save to File</button>
+                            </a>
+                                <button class="btn btn-primary btn-sm" id="print" href="#">Print to Paper</button>
 
 
                 <div class="roundedWrapper">
-                    <div class="heading">Coin Formatted Keys</div>
+                    <h3>Coin Formatted Keys</h3>
                     <select id="coinSelect">
                         <option value="">Select a coin</option>
                         {{ for(var coin in it.coins) { }}
@@ -135,17 +136,11 @@
                         </ol>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
-    </div>
 
     <iframe id="printFrame" name="printFrame"></iframe>
-
-</main><!-- End #main -->
 
 
 <!-- Key Scripts -->

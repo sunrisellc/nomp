@@ -1,0 +1,7 @@
+{
+    "name": "Bandito",
+    "symbol": "BNDT",
+    "algorithm": "scrypt",
+    "peerMagic": "4D455448",
+    "peerMagicTestnet": "fdd2c8f1"
+}
