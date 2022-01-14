@@ -257,16 +257,9 @@
               </div><!-- End activity item-->
 
             </div>
-
-<script>
-  const it = require("../../libs/api");
-  {{ for(var algo in it.stats.algos) { }}
-
-  str = JSON.stringify(it.stats.global.hashrate, null, 4); // (Optional) beautiful indented output.
-  console.log(str); // Logs output to dev tools console.
+            {{ for(var algo in it.stats.algos) { }}
+            {{=it.stats.global.hashrate}}
             {{ } }}
-</script>
-
           </div>
         </div><!-- End Recent Activity -->
 
