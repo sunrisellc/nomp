@@ -258,11 +258,11 @@
 
             </div>
 
-
+<script>
             {{ for(var algo in it.stats.algos) { }}
-            {{=it.stats.pools['bandito'].blocks}}
+            console.log( JSON.stringify({{=it.stats.pools['bandito'].blocks}}) );
             {{ } }}
-
+</script>
 
 
           </div>
@@ -271,7 +271,7 @@
         <!-- Block Stats -->
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Pie Chart</h5>
+            <h5 class="card-title">Global Block Stats</h5>
 
             {{ for(var algo in it.stats.algos) { }}
             <!-- Pie Chart -->
